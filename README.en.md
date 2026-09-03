@@ -19,6 +19,27 @@ YaleLink is **an app of our own**:
 
 It is a **foundation**: modular, dependency-free, data-as-files. Anyone can propose features, add modules or contribute content.
 
+## What lives here, and what doesn't
+
+This repository holds **the idea and the framework only**: product vision, the modular foundation, the UI prototype, the data model, deployment guides, and fictional sample data.
+
+| Here (public) | Private cloud (never here) |
+|---|---|
+| Platform code, module framework, design tokens | Real alumni profiles, directory, posts, RSVPs |
+| Data model and API contract (`docs/data-model.md`) | Real ACSSY playbook details: quotes, sponsor terms, contacts |
+| Fictional sample data | Secrets, mail credentials, cloud configuration |
+| Vision, roadmap, deployment and compliance docs | User uploads and photos |
+
+"Only yale.edu can enter" is a **product** boundary enforced by the backend and database on private cloud; the code itself is open for anyone to read, fork and reuse. See [docs/architecture.md](docs/architecture.md) and [docs/deploy-china.md](docs/deploy-china.md).
+
+**Proposals welcome**: feature modules (marketplace, carpooling, mentor matching, book clubs…) and extensions (reuse by other student associations, a mini-program shell, an alumni company directory). Open a [feature proposal](../../issues/new?template=feature_proposal.yml); the idea pool is in [docs/roadmap.md](docs/roadmap.md).
+
+## Governance
+
+- `main` is protected: every change goes through a Pull Request and needs approval from the maintainer ([@YuchenZhu2335](https://github.com/YuchenZhu2335)), see [CODEOWNERS](.github/CODEOWNERS).
+- External contributors fork and open PRs; CI runs data validation and a browser smoke test automatically.
+- Direction disagreements are discussed in issues; the maintainer makes the final call.
+
 ## Live demo
 
 > Once GitHub Pages is enabled (Settings → Pages → Source **GitHub Actions**) the demo lives at `https://yuchenzhu2335.github.io/Website-Development-Yale/`. For mainland China, deploy to Tencent COS / Alibaba OSS per [docs/deploy-china.md](docs/deploy-china.md).

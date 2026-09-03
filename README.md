@@ -37,6 +37,29 @@ YaleLink 想做的是一个**属于耶鲁人自己的 APP**：
 
 它是一个**开源基底**：模块化、零依赖、数据即文件。任何人都可以提功能、加模块、补内容。
 
+## 这个仓库放什么、不放什么
+
+这里只放 **理念与框架**：产品愿景、模块化基底、界面原型、数据模型、部署方案，以及虚构的示例数据。
+
+| 放在这里（公开） | 不放在这里（私有云） |
+|---|---|
+| 平台代码、模块框架、设计令牌 | 真实校友资料、目录、发帖、报名记录 |
+| 数据模型与 API 契约（`docs/data-model.md`） | 学联真实 SOP 中的报价、赞助条款、联系人 |
+| 虚构示例数据（人物、公司、活动均为编造） | 任何密钥、邮件服务凭证、云账号配置 |
+| 愿景、路线图、部署与合规文档 | 用户上传的文件与照片 |
+
+"只有 yale.edu 邮箱能进"是**产品**的边界，由私有云上的后端与数据库保证；代码本身开源，任何人都可以读、fork、复用。
+真实数据的存储与访问控制方案见 [docs/architecture.md](docs/architecture.md) 与 [docs/deploy-china.md](docs/deploy-china.md)。
+
+**欢迎大家一起提案**：功能模块（二手市场、拼车、导师配对、读书会……）、延展思路（其他高校学联复用、小程序壳、校友企业目录），
+都可以通过 [功能提案](../../issues/new?template=feature_proposal.yml) 发起讨论。想法池见 [docs/roadmap.md](docs/roadmap.md)。
+
+## 治理
+
+- `main` 分支受保护：所有改动走 Pull Request，需要维护者（[@YuchenZhu2335](https://github.com/YuchenZhu2335)）审核通过后才能合并，见 [CODEOWNERS](.github/CODEOWNERS)。
+- 外部贡献者 fork 后提 PR；CI 会自动跑数据校验与页面冒烟测试。
+- 功能方向上的分歧在 Issue 里讨论，维护者做最终决定。
+
 ## 在线 Demo
 
 > 仓库开启 GitHub Pages 后（Settings → Pages → Source 选 **GitHub Actions**），
