@@ -1,0 +1,81 @@
+<p align="center"><img src="web/assets/logo.svg" width="72" alt="YaleLink"></p>
+<h1 align="center">YaleLink</h1>
+<p align="center">An open-source community platform for Yale students and alumni, built on the trust of a <code>yale.edu</code> inbox.</p>
+<p align="center"><a href="README.md">中文</a> · <a href="docs/vision.md">Vision</a> · <a href="docs/modules.md">Modules</a> · <a href="docs/architecture.md">Architecture</a> · <a href="CONTRIBUTING.md">Contributing</a> · <a href="docs/deploy-china.md">Deploying in China</a></p>
+
+---
+
+## What it is
+
+WeChat groups are our default community, and they have three built-in flaws: **closed circles, no memory, and painful event logistics**. Every year the same advice about housing, banking and recruiting gets retold in chat; job leads and referrals scatter across dozens of groups; running an ACSSY event depends on whoever remembers last year's process.
+
+YaleLink is **an app of our own**:
+
+- **A first layer of trust** — only `@yale.edu` (students) and `@aya.yale.edu` (alumni) addresses can sign in.
+- **Institutional memory** — forum-style posts and guides that keep career, life and startup experience.
+- **Organized wherever you are** — circles by region, interest and industry; host or join alumni events anywhere.
+- **Career development first** — job leads, referrals, recruiting timelines, a resume workshop, industry study groups and mock interviews.
+- **A steady ACSSY** — a members-only console with event playbooks (SOPs), a contacts base, outreach templates, volunteer recruiting, and a project board with task assignment so the next team can pick things up fast.
+
+It is a **foundation**: modular, dependency-free, data-as-files. Anyone can propose features, add modules or contribute content.
+
+## Live demo
+
+> Once GitHub Pages is enabled (Settings → Pages → Source **GitHub Actions**) the demo lives at `https://yuchenzhu2335.github.io/Website-Development-Yale/`. For mainland China, deploy to Tencent COS / Alibaba OSS per [docs/deploy-china.md](docs/deploy-china.md).
+
+**Demo sign-in**: any `@yale.edu` / `@aya.yale.edu` address, code `000000`. Pick an ACSSY role on the profile step to see the console. All data is fictional.
+
+## Two faces
+
+| | Public: alumni community | Internal: ACSSY console |
+|---|---|---|
+| Who | Everyone verified by email | Members who declared an ACSSY role (admin-approved in production) |
+| What | Careers, events, circles, startup, life guides, directory | Project board, playbooks, contacts, templates, volunteers |
+| Where | Home modules | "ACSSY console" in the sidebar (members only) |
+
+The **"Host an event"** wizard connects them: community events publish through a lightweight flow; official ACSSY events pick a playbook, and the system generates the full task list with due dates. Leads assign, members claim and report progress, and the public event page recruits volunteers.
+
+## Modules
+
+| Module | Route | Notes |
+|---|---|---|
+| Login | `#/login` | Domain allowlist → code → first-time profile (incl. ACSSY role) |
+| Home | `#/home` | ACSSY push (notices / volunteer calls / my tasks), shortcuts, latest posts, upcoming events, featured alumni |
+| Careers | `#/careers` | Jobs & referrals · Timelines · Resume workshop · Study groups & mocks · Industry research |
+| Events | `#/events` | Filter by region / type, RSVP, detail, "Host an event" wizard |
+| Circles | `#/circles` | Interest / region / industry circles; join, see their events, host inside a circle |
+| Startup | `#/startup` | Campus resources (Tsai CITY etc.) · Projects & co-founders · "I offer / I need" matching |
+| Life | `#/life` | Housing, food, health… × region; experience posts; contribute entries |
+| Directory | `#/directory` | Filter by industry / region / help offered; profiles; say hi |
+| ACSSY console | `#/acssy` | Board · Playbooks · Contacts · Templates · Volunteers (members only) |
+| Profile | `#/profile` | Profile, my posts / events / groups, points and badges |
+| About | `#/about` | Vision, auto-generated module list, roadmap, how to contribute |
+
+See [docs/modules.md](docs/modules.md) for details and extension points.
+
+## Quick start
+
+```bash
+git clone https://github.com/YuchenZhu2335/Website-Development-Yale.git
+cd Website-Development-Yale/web
+python3 -m http.server 8000      # or: npx serve .
+```
+
+No build, no dependencies. Validate data and dictionaries with `node scripts/validate-data.mjs`.
+
+## Contributing
+
+1. **Propose** — open an issue with the feature proposal template.
+2. **Add a module** — create `web/js/modules/xxx.js`, call `registerModule()`, add dictionary keys and data. Five steps in [CONTRIBUTING.md](CONTRIBUTING.md).
+3. **Add content** — jobs, events, guides, playbooks and templates are plain JSON under `web/data/`.
+4. **Improve docs** — vision, roadmap and deployment are open for discussion.
+
+CI validates data and runs a browser smoke test on every PR.
+
+## Roadmap
+
+v0.1 static prototype (now) → v0.2 real backend & email login → v0.3 China-ready (WeChat binding, mini-program shell, domestic CDN, ICP) → v0.4 governance (points, moderators, playbook marketplace). See [docs/roadmap.md](docs/roadmap.md).
+
+## License
+
+[MIT](LICENSE). People, companies and contacts in the sample data are fictional.

@@ -1,0 +1,35 @@
+name: 功能提案 / Feature proposal
+description: 提出一个新功能或模块 / Propose a feature or module
+title: "[提案] "
+labels: ["proposal"]
+body:
+  - type: textarea
+    id: problem
+    attributes:
+      label: 问题 / Problem
+      description: 现在哪件事做不好？在微信群、LinkedIn 或现有模块里为什么解决不了？
+    validations:
+      required: true
+  - type: dropdown
+    id: audience
+    attributes:
+      label: 目标用户 / Audience
+      multiple: true
+      options: ["在校生 Students", "校友 Alumni", "学联成员 ACSSY members", "特定地区 A region", "特定行业 An industry"]
+  - type: textarea
+    id: solution
+    attributes:
+      label: 方案 / Proposed solution
+      description: 一句话说功能；有草图、参考产品更好。
+    validations:
+      required: true
+  - type: textarea
+    id: data
+    attributes:
+      label: 数据 / Data
+      description: 需要新的数据文件吗？大致字段？
+  - type: dropdown
+    id: build
+    attributes:
+      label: 我愿意实现 / I can build it
+      options: ["是 Yes", "需要帮助 With help", "只提想法 Idea only"]

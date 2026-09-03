@@ -1,0 +1,25 @@
+name: Bug 反馈 / Bug report
+description: 页面报错、显示异常 / Something broke
+title: "[Bug] "
+labels: ["bug"]
+body:
+  - type: input
+    id: route
+    attributes:
+      label: 路由 / Route
+      placeholder: "#/careers/jobs"
+  - type: textarea
+    id: steps
+    attributes:
+      label: 复现步骤 / Steps
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: 期望 vs 实际 / Expected vs actual
+  - type: input
+    id: env
+    attributes:
+      label: 环境 / Environment
+      placeholder: "Chrome 130 / iPhone Safari / 语言 zh"

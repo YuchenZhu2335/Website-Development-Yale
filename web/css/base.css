@@ -1,0 +1,58 @@
+/* 重置与布局骨架：桌面 = 顶栏 + 左侧栏；移动 = 顶栏 + 底部导航 */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body { margin: 0; font-family: var(--font); font-size: 15px; line-height: 1.55; color: var(--text); background: var(--bg); }
+a { color: var(--link); text-decoration: none; }
+a:hover { text-decoration: underline; }
+img { max-width: 100%; display: block; }
+h1, h2, h3, h4 { margin: 0; line-height: 1.25; font-weight: 700; letter-spacing: -.01em; }
+h1 { font-size: 1.75rem; } h2 { font-size: 1.25rem; } h3 { font-size: 1.05rem; } h4 { font-size: .95rem; }
+p { margin: 0 0 .75em; }
+p:last-child { margin-bottom: 0; }
+button { font: inherit; color: inherit; }
+input, select, textarea { font: inherit; color: inherit; }
+code { font-family: var(--font-mono); font-size: .9em; background: var(--surface-2); padding: .1em .35em; border-radius: 4px; }
+.muted { color: var(--text-2); }
+.small { font-size: .85rem; }
+.mono { font-family: var(--font-mono); }
+.sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+
+.app { min-height: 100dvh; display: grid; grid-template-rows: var(--topbar-h) 1fr; grid-template-columns: 1fr; grid-template-areas: "top" "main"; }
+.topbar { grid-area: top; position: sticky; top: 0; z-index: 30; height: var(--topbar-h); display: flex; align-items: center; justify-content: space-between; gap: var(--sp-3); padding: 0 var(--sp-4); background: var(--surface); border-bottom: 1px solid var(--border); }
+.sidenav { display: none; }
+.main { grid-area: main; width: 100%; max-width: var(--content-max); margin: 0 auto; padding: var(--sp-5) var(--sp-4) calc(var(--bottomnav-h) + var(--sp-8)); }
+.bottomnav { position: fixed; bottom: 0; left: 0; right: 0; z-index: 30; height: calc(var(--bottomnav-h) + env(safe-area-inset-bottom)); padding-bottom: env(safe-area-inset-bottom); display: flex; background: var(--surface); border-top: 1px solid var(--border); }
+.bottomnav a { flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; font-size: .68rem; color: var(--text-2); }
+.bottomnav a .ico { font-size: 1.25rem; line-height: 1; }
+.bottomnav a.is-active { color: var(--primary); font-weight: 600; }
+.bottomnav a:hover { text-decoration: none; }
+
+@media (min-width: 900px) {
+  .app { grid-template-columns: var(--sidenav-w) 1fr; grid-template-areas: "top top" "side main"; }
+  .sidenav { grid-area: side; display: flex; flex-direction: column; justify-content: space-between; position: sticky; top: var(--topbar-h); height: calc(100dvh - var(--topbar-h)); padding: var(--sp-4) var(--sp-3); background: var(--surface); border-right: 1px solid var(--border); }
+  .sidenav__list { display: flex; flex-direction: column; gap: 2px; }
+  .sidenav__item { display: flex; align-items: center; gap: var(--sp-3); padding: 10px 12px; border-radius: var(--radius-s); color: var(--text-2); font-weight: 500; }
+  .sidenav__item:hover { background: var(--surface-2); text-decoration: none; color: var(--text); }
+  .sidenav__item.is-active { background: var(--primary-soft); color: var(--primary); font-weight: 600; }
+  .sidenav__item .ico { width: 24px; text-align: center; font-size: 1.1rem; }
+  .sidenav__foot { display: flex; flex-direction: column; gap: 6px; padding: 8px 12px; font-size: .8rem; color: var(--text-3); }
+  .sidenav__ver { font-family: var(--font-mono); font-size: .7rem; }
+  .main { padding: var(--sp-6) var(--sp-8) var(--sp-10); }
+  .bottomnav { display: none; }
+}
+
+/* 顶栏 */
+.brand { display: flex; align-items: center; gap: 10px; color: var(--text); }
+.brand:hover { text-decoration: none; }
+.brand__logo { width: 34px; height: 34px; border-radius: 9px; }
+.brand__name { display: flex; flex-direction: column; font-weight: 800; font-size: 1.1rem; line-height: 1.05; letter-spacing: -.01em; }
+.brand__name small { font-weight: 500; font-size: .68rem; color: var(--text-3); letter-spacing: .02em; }
+.topbar__actions { display: flex; align-items: center; gap: var(--sp-2); }
+.topbar__user { display: flex; align-items: center; gap: 8px; padding: 4px 8px 4px 4px; border-radius: 999px; color: var(--text); }
+.topbar__user:hover { background: var(--surface-2); text-decoration: none; }
+.topbar__name { font-weight: 600; font-size: .9rem; max-width: 120px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+@media (max-width: 480px) { .topbar__name { display: none; } .brand__name small { display: none; } }
+.lang-toggle { font-family: var(--font-mono); font-weight: 600; letter-spacing: .02em; }
+.lang-toggle span { color: var(--text-3); }
+.lang-toggle .sep { margin: 0 3px; }
+.lang-toggle .is-on { color: var(--primary); }

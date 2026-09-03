@@ -1,0 +1,26 @@
+name: 内容贡献 / Content contribution
+description: 提交岗位、活动、指南、SOP、模板等内容 / Submit jobs, events, guides, playbooks or templates
+title: "[内容] "
+labels: ["content"]
+body:
+  - type: dropdown
+    id: kind
+    attributes:
+      label: 类型 / Type
+      options: ["岗位 & 内推 Job", "活动 Event", "生活指南 Life guide", "创业资源 Startup resource", "求职时间线 Timeline", "活动 SOP Playbook", "沟通模板 Template", "其他 Other"]
+    validations:
+      required: true
+  - type: textarea
+    id: content
+    attributes:
+      label: 内容 / Content
+      description: 中英文都写最好；可以直接贴 JSON。不要包含真实个人联系方式。
+    validations:
+      required: true
+  - type: checkboxes
+    id: confirm
+    attributes:
+      label: 确认 / Confirm
+      options:
+        - label: 内容不包含真实个人隐私或学联内部敏感信息 / No private or internal data
+          required: true
