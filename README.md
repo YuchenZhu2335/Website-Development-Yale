@@ -63,7 +63,7 @@ YaleLink 想做的是一个**属于耶鲁人自己的 APP**：
 ## 在线 Demo
 
 > 仓库开启 GitHub Pages 后（Settings → Pages → Source 选 **GitHub Actions**），
-> 地址为 `https://yuchenzhu2335.github.io/Website-Development-Yale/`。
+> 地址为 `https://yuchenzhu2335.github.io/YaleLink-connection-is-all-you-need/`。
 > 国内访问建议按 [docs/deploy-china.md](docs/deploy-china.md) 部署到腾讯云 COS / 阿里云 OSS。
 
 **演示登录**：任意 `@yale.edu` / `@aya.yale.edu` 邮箱，验证码 `000000`。
@@ -101,8 +101,8 @@ YaleLink 想做的是一个**属于耶鲁人自己的 APP**：
 ## 快速开始
 
 ```bash
-git clone https://github.com/YuchenZhu2335/Website-Development-Yale.git
-cd Website-Development-Yale/web
+git clone https://github.com/YuchenZhu2335/YaleLink-connection-is-all-you-need.git
+cd YaleLink-connection-is-all-you-need/web
 python3 -m http.server 8000      # 或 npx serve .
 # 浏览器打开 http://localhost:8000
 ```

@@ -42,7 +42,7 @@ This repository holds **the idea and the framework only**: product vision, the m
 
 ## Live demo
 
-> Once GitHub Pages is enabled (Settings → Pages → Source **GitHub Actions**) the demo lives at `https://yuchenzhu2335.github.io/Website-Development-Yale/`. For mainland China, deploy to Tencent COS / Alibaba OSS per [docs/deploy-china.md](docs/deploy-china.md).
+> Once GitHub Pages is enabled (Settings → Pages → Source **GitHub Actions**) the demo lives at `https://yuchenzhu2335.github.io/YaleLink-connection-is-all-you-need/`. For mainland China, deploy to Tencent COS / Alibaba OSS per [docs/deploy-china.md](docs/deploy-china.md).
 
 **Demo sign-in**: any `@yale.edu` / `@aya.yale.edu` address, code `000000`. Pick an ACSSY role on the profile step to see the console. All data is fictional.
 
@@ -77,8 +77,8 @@ See [docs/modules.md](docs/modules.md) for details and extension points.
 ## Quick start
 
 ```bash
-git clone https://github.com/YuchenZhu2335/Website-Development-Yale.git
-cd Website-Development-Yale/web
+git clone https://github.com/YuchenZhu2335/YaleLink-connection-is-all-you-need.git
+cd YaleLink-connection-is-all-you-need/web
 python3 -m http.server 8000      # or: npx serve .
 ```
 
