@@ -1,0 +1,73 @@
+/* ============================================================
+   设计令牌 / Design tokens
+   品牌色取自耶鲁官方色：Yale Blue #00356B、Medium Blue #286DC0、Light Blue #63AAFF
+   ============================================================ */
+:root {
+  --yale-blue: #00356B;
+  --yale-mid: #286DC0;
+  --yale-light: #63AAFF;
+  --accent: #BD5319;          /* 暖色强调（耶鲁辅助色 Orange） */
+  --accent-soft: #FCEBDD;
+  --green: #5F712D;
+  --green-soft: #EAF0D8;
+
+  --bg: #F4F6FA;
+  --surface: #FFFFFF;
+  --surface-2: #EEF2F8;
+  --border: #DCE3EE;
+  --text: #16213A;
+  --text-2: #52607A;
+  --text-3: #8A94A8;
+  --primary: var(--yale-blue);
+  --primary-hover: #002A55;
+  --primary-soft: #E3EDF9;
+  --on-primary: #FFFFFF;
+  --link: var(--yale-mid);
+  --danger: #B3261E;
+  --danger-soft: #FBE9E7;
+  --warn: #8A5A00;
+  --warn-soft: #FFF3D6;
+
+  --radius-s: 8px;
+  --radius: 14px;
+  --radius-l: 20px;
+  --shadow-s: 0 1px 2px rgba(16, 33, 58, .06);
+  --shadow: 0 4px 16px rgba(16, 33, 58, .08);
+  --shadow-l: 0 16px 40px rgba(16, 33, 58, .16);
+
+  --sp-1: 4px; --sp-2: 8px; --sp-3: 12px; --sp-4: 16px; --sp-5: 20px; --sp-6: 24px; --sp-8: 32px; --sp-10: 40px;
+  --font: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --topbar-h: 60px;
+  --sidenav-w: 236px;
+  --bottomnav-h: 60px;
+  --content-max: 1080px;
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #0F1624;
+    --surface: #182236;
+    --surface-2: #1F2B44;
+    --border: #2B3A57;
+    --text: #EAF0FA;
+    --text-2: #A9B6CD;
+    --text-3: #7583A0;
+    --primary: #4A8FE0;
+    --primary-hover: #63AAFF;
+    --primary-soft: #1D3557;
+    --on-primary: #0B1730;
+    --link: #7FBBFF;
+    --accent-soft: #3A2415;
+    --green-soft: #26301A;
+    --danger-soft: #3A1D1B;
+    --warn-soft: #3A2E12;
+    --warn: #F0C36D;
+    --shadow-s: 0 1px 2px rgba(0,0,0,.3);
+    --shadow: 0 4px 16px rgba(0,0,0,.35);
+    --shadow-l: 0 16px 40px rgba(0,0,0,.5);
+    color-scheme: dark;
+  }
+}
